@@ -5,7 +5,7 @@ import time
 # 1. Изменение строки в файле /etc/default/grub
 def modify_grub_config():
     grub_file = "/etc/default/grub"
-    new_grub_cmdline = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pti=off spectre_v1=off spectre_v2=off l1tf=off nospec_store_bypass_disable ibrs=off stibp=off ssbd=off l1d_flush=off mds=off tsx_async_abort=off mitigations=off noibpb no_stf_barrier tsx=on"\n'
+    new_grub_cmdline = 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pti=off spectre_v1=off spectre_v2=off l1tf=off nospec_store_bypass_disable ibrs=off stibp=off ssbd=off l1d_flush=off mds=off tsx_async_abort=off mitigations=off noibpb no_stf_barrier tsx=on retbleed=off spectre_v2=retpoline,force"\n'
     
     try:
         with open(grub_file, 'r') as file:
