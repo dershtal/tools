@@ -5,7 +5,7 @@ import os
 
 GRUB_CONFIG_PATH = "/etc/default/grub"
 GRUB_UPDATE_CMD = "sudo update-grub"
-DISABLE_PARAMS = "pti=off spectre_v1=off spectre_v2=off l1tf=off nospec_store_bypass_disable ibrs=off stibp=off ssbd=off l1d_flush=off mds=off tsx_async_abort=off mitigations=off noibpb no_stf_barrier tsx=on retbleed=off spectre_v2=retpoline,force"
+DISABLE_PARAMS = "pti=off spectre_v1=off spectre_v2=off l1tf=off nospec_store_bypass_disable ibrs=off stibp=off ssbd=off l1d_flush=off mds=off tsx_async_abort=off mitigations=off noibpb no_stf_barrier tsx=on retbleed=off no_rsb_filling smt=off"
 
 def print_help():
     help_text = """
